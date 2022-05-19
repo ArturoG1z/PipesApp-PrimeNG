@@ -1,4 +1,5 @@
-<div class="container">
+<app-menu class="sticky top-0"></app-menu>
+<div class="container py-2">
   <div class="text-layout">
     <h1>{{ value | number }}</h1>
     <p>{{ name | titlecase }}</p>
@@ -18,9 +19,9 @@
       [header]="name | titlecase"
       subheader="Card Subheader"
       [style]="{ margin: '2em 0' }"
-      class="col-md-4 col-sm-6 "
+      class="col-lg-4 col-md-6"
       styleClass="p-card-shadow"
-      *ngFor="let item of [1, 1, 1]"
+      *ngFor="let item of [1, 1, 1, 1, 1]"
     >
       <ng-template pTemplate="header">
         <img

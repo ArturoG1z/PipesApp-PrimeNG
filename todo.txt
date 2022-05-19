@@ -1,0 +1,64 @@
+
+<div class="container py-2">
+  <div class="text-layout">
+    <h1>{{ value | number }}</h1>
+    <p>{{ name | titlecase }}</p>
+    <p>{{ obj | json }}</p>
+  </div>
+  <button
+    pButton
+    pRipple
+    class="p-button-help"
+    icon="pi pi-bell"
+    iconPos="right"
+    label="Button"
+    (click)="showName()"
+  ></button>
+  <div class="row">
+    <p-card
+      [header]="name | titlecase"
+      subheader="Card Subheader"
+      [style]="{ margin: '2em 0' }"
+      class="col-lg-4 col-md-6"
+      styleClass="p-card-shadow"
+      *ngFor="let item of [1, 1, 1, 1, 1]"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://sm.ign.com/t/ign_latam/screenshot/default/superman-prime_tsxt.1280.jpg"
+        />
+      </ng-template>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+        consequuntur error repudiandae numquam deserunt quisquam repellat libero
+        asperiores earum nam nobis, culpa ratione quam perferendis esse,
+        cupiditate neque quas!
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Save" icon="pi pi-check" iconPos="right"></p-button>
+        <p-button
+          label="Cancel"
+          icon="pi pi-times"
+          styleClass="p-button-secondary"
+          iconPos="right"
+          [style]="{ 'margin-left': '.5em' }"
+        ></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+  <p>HOla</p>
+</div>
+
+
+  title = 'pipesApp';
+  name: string = 'Arturo GOnzAlez';
+  value: number = 100100100100;
+  obj = {
+    brother: 'Juan',
+  }
+
+  
+  showName() {
+    console.log(this.name);
+  }

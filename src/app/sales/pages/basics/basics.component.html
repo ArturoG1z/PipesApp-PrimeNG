@@ -1,1 +1,149 @@
-<p>basics works!</p>
+<div class="text-layout">
+  <h1>Basic Pipes</h1>
+  <p>
+    Pipes Included in Angular
+  </p>
+</div>
+<p-divider type="dashed"></p-divider>
+
+<div class="grid">
+  <div class="lg:col-4 md:col-6 sm:col py-4">
+    <p-card
+      [header]="'uppercase' | uppercase"
+      subheader="Card Subheader"
+      class="col-lg-4 col-md-6"
+      styleClass="p-card-shadow"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://sm.ign.com/t/ign_latam/screenshot/default/superman-prime_tsxt.1280.jpg"
+        />
+      </ng-template>
+      <p>
+        {{ nameLower | uppercase }}
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="flex justify-content-center w-full">
+          <p-button label="Save" icon="pi pi-check" iconPos="right"></p-button>
+          <p-button
+            label="Cancel"
+            icon="pi pi-times"
+            styleClass="p-button-secondary"
+            iconPos="right"
+            [style]="{ 'margin-left': '.5em' }"
+          ></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="lg:col-4 md:col-6 sm:col py-4">
+    <p-card
+      [header]="'title case' | titlecase"
+      subheader="Card Subheader"
+      class="col-lg-4 col-md-6"
+      styleClass="p-card-shadow"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://sm.ign.com/t/ign_latam/screenshot/default/superman-prime_tsxt.1280.jpg"
+        />
+      </ng-template>
+      <p>
+        {{ fullName | titlecase }}
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="flex justify-content-center w-full">
+          <p-button label="Save" icon="pi pi-check" iconPos="right"></p-button>
+          <p-button
+            label="Cancel"
+            icon="pi pi-times"
+            styleClass="p-button-secondary"
+            iconPos="right"
+            [style]="{ 'margin-left': '.5em' }"
+          ></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="lg:col-4 md:col-6 sm:col py-4">
+    <p-card
+      [header]="'LOWERCASE' | lowercase"
+      subheader="Card Subheader"
+      class="col-lg-4 col-md-6"
+      styleClass="p-card-shadow"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://sm.ign.com/t/ign_latam/screenshot/default/superman-prime_tsxt.1280.jpg"
+        />
+      </ng-template>
+      <p>
+        {{ nameUpper | lowercase }}
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="flex justify-content-center w-full">
+          <p-button label="Save" icon="pi pi-check" iconPos="right"></p-button>
+          <p-button
+            label="Cancel"
+            icon="pi pi-times"
+            styleClass="p-button-secondary"
+            iconPos="right"
+            [style]="{ 'margin-left': '.5em' }"
+          ></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<p-divider type="dashed"></p-divider>
+<div class="text-layout">
+  <h1>Date | Pipe</h1>
+  <p>
+    Pipes for show dates
+  </p>
+</div>
+
+<div class="grid">
+  <div class="md:col-6 sm:col py-4">
+    <p-card>
+      <ul>
+        <li> date </li>
+        <li> date | date: 'short' : 'es-MX' </li>
+        <li> date | date: 'medium' : 'es-MX' </li>
+        <li> date | date: 'long' : 'es-MX' </li>
+        <li> date | date: 'full' : 'es-MX' </li>
+        <li> date | date: 'full' : 'en-US' </li>
+        <li> date | date: 'YY  LL  WW  dd EEEE aa' : 'es-MX' </li>
+      </ul>
+
+      <p-divider></p-divider>
+      <ul>
+        <li>date | date: 'long' : 'GMT-6' : 'es-MX'</li>
+        <li>date | date: 'long' : 'GMT-4' : 'es-MX'</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="md:col-6 sm:col py-4">
+    <p-card>
+      <ul>
+        <li>{{ date }}</li>
+        <li>{{ date | date: 'short' : '' : 'es-MX' }}</li>
+        <li>{{ date | date: 'medium' : '' : 'es-MX' }}</li>
+        <li>{{ date | date: 'long' : '' : 'es-MX' }}</li>
+        <li>{{ date | date: 'full' : '' : 'es-MX' }}</li>
+        <li>{{ date | date: 'full' : '' : 'en-US' }}</li>
+        <li>{{ date | date: 'YY  LL  WW  dd EEEE aa' : 'es-MX' }}</li>
+      </ul>
+      <p-divider></p-divider>
+      <ul>
+        <li>{{ date | date: 'long' : 'GMT-6' : 'es-MX' }}</li>
+        <li>{{ date | date: 'long' : 'GMT-4' : 'es-MX' }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>

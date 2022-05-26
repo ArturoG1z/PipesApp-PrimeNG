@@ -1,1 +1,87 @@
-<p>uncommon works!</p>
+<div class="text-layout">
+  <h1>Uncommon Pipes</h1>
+  <p>Pipes Included in Angular</p>
+</div>
+<div class="grid">
+  <div class="lg:col-6 md:col-12 py-4">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <div *ngIf="this.clients.length > 0; else noClients" class="w-full">
+        Hola {{ this.clients[current].name }}, es un placer
+        {{ this.clients[current].genre | i18nSelect: invitationMap }} a una cena
+        con nosotros.
+        <p-divider></p-divider>
+        <div class="flex justify-content-center w-full">
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Change person"
+            class="p-button-rounded w-9"
+            (click)="changeClient()"
+          ></button>
+        </div>
+      </div>
+      <ng-template #noClients>
+        <p>No clients available</p>
+      </ng-template>
+    </p-fieldset>
+  </div>
+  <div class="lg:col-6 md:col-12 py-4">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      Actualmente {{ clients.length | i18nPlural: clientsMap }} esperando
+      <p-divider></p-divider>
+      <div class="flex justify-content-center w-full">
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Delete person"
+          class="p-button-rounded w-9"
+          (click)="deletePerson()"
+        ></button>
+      </div>
+    </p-fieldset>
+  </div>
+  <div class="lg:col-6 md:col-12 py-4">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{ clientsNames }}</pre>
+      <b>Slice: 0 : 2</b>
+      <pre>{{ clientsNames | slice: 0:2 }}</pre>
+      <b>Slice: 1 : 3</b>
+      <pre>{{ clientsNames | slice: 1:3 }}</pre>
+      Actualmente {{ clients.length | i18nPlural: clientsMap }} esperando
+      <p-divider></p-divider>
+    </p-fieldset>
+  </div>
+
+  <div class="lg:col-6 md:col-12 py-4">
+    <p-fieldset legend="JSON Pipe" [toggleable]="true">
+      <div class="w-full">
+        <div class="flex justify-content-between flex-wrap">
+          <pre>{{ person | json }} </pre>
+          <button
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-copy"
+            (click)="copyToClipboard(person)"
+            class="p-button-rounded p-button-outlined"
+          ></button>
+        </div>
+        <p-divider></p-divider>
+      </div>
+    </p-fieldset>
+  </div>
+
+  <div class="lg:col-6 md:col-12 py-4">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          {{ item.key }}: {{ item.value }}
+        </li>
+      </ul>
+      <p-divider></p-divider>
+    </p-fieldset>
+  </div>
+</div>

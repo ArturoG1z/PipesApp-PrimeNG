@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { FieldsetModule } from 'primeng/fieldset';
 import { InputTextModule } from 'primeng/inputtext';
 import { ListboxModule } from 'primeng/listbox';
 import { MenuModule } from 'primeng/menu';
@@ -14,6 +15,7 @@ import { DividerModule } from 'primeng/divider';
     ButtonModule,
     CardModule,
     DividerModule,
+    FieldsetModule,
     InputTextModule,
     ListboxModule,
     MenuModule,

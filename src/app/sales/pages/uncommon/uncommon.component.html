@@ -84,4 +84,21 @@
       <p-divider></p-divider>
     </p-fieldset>
   </div>
+
+  <div class="lg:col-6 md:col-12 py-4">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <b>Observable async</b>
+      <pre>
+        Si esto se llegara a llamar dos veces 
+        significa que se suscribe doble vez
+        {{"{{ asyncObservable | async }}"}}
+      </pre>
+      <p>{{ myObservable | async }}</p>
+      <p-divider></p-divider>
+      <b>Promise async</b>
+      <p *ngIf="!(promessValue | async)">Resolviendo Promesa</p>
+      <p>{{ promessValue | async }}</p>
+      <p-divider></p-divider>
+    </p-fieldset>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 interface IClient {
   name: string;
   genre: string;
@@ -54,6 +55,13 @@ export class UncommonComponent implements OnInit {
     age: 30,
     direction: 'calle falsa 123',
   }
+
+  myObservable = interval(1000);
+  promessValue = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Data on promise');
+    }, 2000);
+  });
 
   get clientsNames() {
     return this.clients.map(client => client.name);

@@ -18,26 +18,27 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-desktop',
         items: [
           {
-            label: 'Text and dates', 
+            label: 'Text and dates',
             icon: 'pi pi-align-left',
-            routerLink: '/'
+            routerLink: '/',
           },
           {
-            label: 'Numbers', 
+            label: 'Numbers',
             icon: 'pi pi-dollar',
-            routerLink: '/numbers'
+            routerLink: '/numbers',
           },
           {
-            label: 'No comunes', 
+            label: 'No comunes',
             icon: 'pi pi-globe',
-            routerLink: '/uncommon'
+            routerLink: '/uncommon',
           },
-        ]
+        ],
       },
       {
         label: 'Custom Pipes',
         icon: 'pi pi-cog',
-      }
+        routerLink: '/order',
+      },
     ];
   }
 }

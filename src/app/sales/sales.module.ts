@@ -5,8 +5,7 @@ import { UncommonComponent } from './pages/uncommon/uncommon.component';
 import { BasicsComponent } from './pages/basics/basics.component';
 import { OrderComponent } from './pages/order/order.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-
-
+import { MyUppercasePipe } from './pipes/myuppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -14,16 +13,14 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     UncommonComponent,
     BasicsComponent,
     OrderComponent,
+    MyUppercasePipe,
   ],
-  imports: [
-    CommonModule,
-    PrimeNgModule
-  ],
+  imports: [CommonModule, PrimeNgModule],
   exports: [
     NumbersComponent,
     UncommonComponent,
     BasicsComponent,
     OrderComponent,
-  ]
+  ],
 })
-export class SalesModule { }
+export class SalesModule {}

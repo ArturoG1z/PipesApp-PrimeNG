@@ -1,1 +1,10 @@
-<p>order works!</p>
+<div class="text-layout">
+  <h1>Custom Pipes</h1>
+  <p>Pipes created by {{ "Us" | myUppercase: uppercase }}</p>
+  <button
+    pButton
+    pRipple
+    (click)="toggleUppercase()"
+    label="Toggle Uppercase"
+  ></button>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Table } from 'primeng/table';
 import { Hero, Color } from '../../interfaces/sales.interfaces';
 
 @Component({
@@ -13,7 +14,12 @@ export class OrderComponent implements OnInit {
     { name: 'Bombasto', flies: false, color: Color.Green },
     { name: 'Magneta', flies: true, color: Color.Blue },
     { name: 'Tornado', flies: false, color: Color.Yellow },
+    { name: 'Mr. O', flies: true, color: Color.Red },
+    { name: 'Mr. X', flies: false, color: Color.Green },
+    { name: 'Superman', flies: true, color: Color.Blue },
+    { name: 'Batman', flies: false, color: Color.Yellow },
   ];
+  orderBy: string = 'none';
 
   constructor() {}
 
@@ -21,5 +27,13 @@ export class OrderComponent implements OnInit {
 
   toggleUppercase() {
     this.uppercase = !this.uppercase;
+  }
+
+  changeSortOrder(orderBy: string) {
+    this.orderBy = orderBy;
+  }
+
+  clear(table: Table) {
+    table.clear();
   }
 }
